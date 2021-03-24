@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/73658062/112347472-e52c7a80-8cec-11eb-82c0-2e1a5fc8689b.png)
+
 # AngularMaterialGettingStarted
 
 In this lecture we gonna look at;
@@ -6,6 +8,7 @@ Include a default theme.
 Build a simple application with sidebar navigation.
 Build a toolbar.
 And few input elements like input text, checkboxes, etc
+
 
 ## Video Source
 https://youtu.be/oAQmWFcAuDI
