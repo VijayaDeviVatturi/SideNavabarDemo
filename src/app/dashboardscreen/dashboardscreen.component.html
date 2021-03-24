@@ -1,0 +1,55 @@
+<mat-card class="card" style="
+background-color: blanchedalmond;
+">
+<div class="container">
+    <div class="">
+      <form class="formposition " #loginForm="ngForm">
+        <h1>Sign Up</h1>
+        <div>
+          <div class="cross-validation">
+            <div class="form-group">
+              <label for="name"> Name</label><br>
+              <input type="name" id="name" name="name" class="inputstyle" required [(ngModel)]="name" #fname="ngModel">
+  
+              <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alertdanger">
+  
+                <div *ngIf="fname.errors.required">
+                  First Name is required.
+                </div>
+  
+              </div><br>
+              <label for="user">User Name</label><br>
+              <input type="text" id="user" name="user" class="inputstyle" required [(ngModel)]="User" #uname="ngModel">
+  
+              <div *ngIf="uname.invalid && (uname.dirty || uname.touched)" class="alertdanger">
+  
+                <div *ngIf="uname.errors.required">
+                  User Name is required.
+                </div>
+  
+              </div><br>
+              <label for="password">Password</label><br>
+              <input type="password" id="password" name="password" class="inputstyle" required [(ngModel)]="password"
+                #passname="ngModel">
+  
+              <div *ngIf="passname.invalid && (passname.dirty || passname.touched)" class="alertdanger">
+  
+                <div *ngIf="passname.errors.required">
+                  Password is required.
+                </div>
+  
+              </div><br>
+  
+            </div>
+  
+          </div>
+          <br>
+          <button (click)="regestration()" [disabled]="loginForm.invalid">SignUp</button>
+  
+        </div>
+  
+      </form>
+  
+    </div>
+  </div>
+</mat-card>

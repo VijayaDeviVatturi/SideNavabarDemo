@@ -1,0 +1,103 @@
+<mat-toolbar id="mainToolbar" color="primary">
+  <mat-icon (click)="onToolbarMenuToggle()" id="toolbarMenu">subject</mat-icon>
+  <h4 class="headingstyle">My DEMO App</h4>
+  <span class="toolbar-spacer"></span>
+  <mat-icon class="toolbar-icon" matBadge="8" matBadgePosition="after" matBadgeColor="accent"><span
+      class="noteficationfont">notifications</span></mat-icon>
+</mat-toolbar>
+
+<mat-sidenav-container id="sidenavContainer" fullscreen>
+  <mat-sidenav mode="side" #sidenav id="sidenav" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen" opened>
+
+    <mat-list id="menus">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="avatar"></div>
+
+          <mat-card-title><span class="fontstyles">Name</span></mat-card-title>
+          <mat-card-subtitle><span class="fontstyles">Internal</span></mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+      <mat-list-item>
+        <button class="menu-item" (click)=openMenu() mat-flat-button>
+          <span class="fontstyles">
+            <mat-icon style="
+            padding-top: 5%;
+        ">dashboard</mat-icon>
+          </span>
+          <span class="fontstyles"> Dashboard</span>
+          <mat-icon style="
+        margin-left: 15%;
+    "><span class="fontstyles">expand_more</span></mat-icon>
+
+        </button>
+
+      </mat-list-item>
+     
+      <mat-list-item *ngIf="isText">
+        <button class="menu-item" mat-flat-button>
+         
+          <span style="
+        margin-left: 29%;" class="fontstyles"><a class="anchorlinkstyle" routerLink='details'>Sub menu</a>
+          </span></button>
+      </mat-list-item>
+      <mat-list-item>
+        <button (click)="openMenu1()" class="menu-item" mat-flat-button>
+          <span class="fontstyles">
+            <mat-icon style="
+            padding-top: 5%;
+        ">work</mat-icon>
+          </span>
+          <span class="fontstyles"> Project </span>
+          <mat-icon style="
+          margin-left: 25%;
+      "><span class="fontstyles">expand_more</span></mat-icon>
+        </button>
+      </mat-list-item>
+
+      <mat-list-item *ngIf="isProject">
+        <button class="menu-item" mat-flat-button>
+         
+          <span style="
+              margin-left: 29%;
+          " class="fontstyles"> <a class="anchorlinkstyle" routerLink="projectdetails">project</a></span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button (click)="openMenu2()" class="menu-item" mat-flat-button>
+          <span class="fontstyles">
+            <mat-icon style="
+                padding-top: 5%;
+            ">settings</mat-icon>
+          </span>
+          <span class="fontstyles" style="
+          margin-left: 3px;
+      ">Settings</span>
+          <mat-icon style="
+            margin-left: 24%;
+        "><span class="fontstyles">expand_more</span></mat-icon>
+        </button>
+      </mat-list-item>
+
+      <mat-list-item *ngIf="isSettings">
+        <button class="menu-item" mat-flat-button>
+         
+          <span style="
+                margin-left:29%;
+            " class="fontstyles"> settings</span>
+        </button>
+      </mat-list-item>
+
+    </mat-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+
+    <router-outlet></router-outlet>
+
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
